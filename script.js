@@ -16,9 +16,10 @@ menuBtn.addEventListener('click', () => {
     navbar.classList.remove('open');
     menuOpen = false;
   }
-});
+}
+)
 
-NI1.addEventListener('click', () => {
+NI1.addEventListener('click', e => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     navbar.classList.add('open');
@@ -28,8 +29,10 @@ NI1.addEventListener('click', () => {
     navbar.classList.remove('open');
     menuOpen = false;
   }
-});
-NI2.addEventListener('click', () => {
+},
+{capture: true}
+)
+NI2.addEventListener('click', e => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     navbar.classList.add('open');
@@ -39,8 +42,10 @@ NI2.addEventListener('click', () => {
     navbar.classList.remove('open');
     menuOpen = false;
   }
-});
-NI3.addEventListener('click', () => {
+},
+{capture: true}
+)
+NI3.addEventListener('click', e => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     navbar.classList.add('open');
@@ -50,8 +55,10 @@ NI3.addEventListener('click', () => {
     navbar.classList.remove('open');
     menuOpen = false;
   }
-});
-NI4.addEventListener('click', () => {
+},
+{capture: true}
+)
+NI4.addEventListener('click', e => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     navbar.classList.add('open');
@@ -61,4 +68,6 @@ NI4.addEventListener('click', () => {
     navbar.classList.remove('open');
     menuOpen = false;
   }
-});
+},
+{capture: true}
+)

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap');
 *{
-  font-family: 'Roboto', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-family: 'Space Mono', monospace;
   padding: 0;
   margin: 0;
 }
@@ -9,20 +11,35 @@
   --dark:rgba(75,82,87,1);
   --gray:rgba(124, 135, 142,1);
   --light:rgba(191,207,220,1);
+  --primary:rgba(147, 194, 71,1);
   */
+  /*
   --dark:#ccc;
   --light:rgba(255,255,255,1);
   --primary:rgba(147, 194, 71,1);
   --primary-dr:rgba(109, 136, 50,1);
   --secondary:rgba(100, 80, 194,1);
   --secondary-dr:rgba(70, 56, 136,1);
-  --tertiary: rgba(194, 109, 71,1);
+  --tertiary: rgba(194, 109, 71,1);*/
+  --dark: #222;
+  --gray: gray;
+  --light: #fff;
+  --primary:rgba(255, 221, 68,1);
+  --primary-dr:rgba(179, 167, 48,1);
+  --secondary:rgba(68, 166, 255,1);
+  --secondary-dr:rgba(48, 116, 179,1);
+  --tertiary: rgba(255, 68, 139,1);
+  
 }
 body{
   margin:0;
   padding: 0;
   overflow-x: hidden;
-  background-color: white;
+  background-color: var(--light);
+  background: var(--light);
+  background-image: radial-gradient(gray 1px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
 }
 
 .menu-btn{
@@ -81,19 +98,20 @@ body{
   transform: translateX(-50px);
   background: transparent;
   box-shadow: none;
-  
 }
 .menu-btn.open .menu-btn__burger::before {
-  transform: rotate(45deg) translate(35px, -35px);background-color: var(--secondary);
+  transform: rotate(45deg) translate(35px, -35px);background-color: var(--primary);
 }
 .menu-btn.open .menu-btn__burger::after {
-  transform: rotate(-45deg) translate(35px, 35px);
-  background-color: var(--secondary);
+  transform: rotate(-45deg) translate(35px, 35px);background-color: var(--primary);
 }
 
 .menu-btn.open{
   width: 400vw;
   height: 400vw;
+  background-image: radial-gradient(black 1px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
 }
 
 
@@ -102,7 +120,7 @@ body{
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  position: absolute;
+  position: fixed;
   top: 45%;
   z-index: 12;
   transform: 
@@ -115,9 +133,15 @@ body{
 }
 .nav-items{
   text-decoration: none;
-  color: var(--secondary);
+  color: var(--primary);
   font-size: 50px;
   padding: 10px;
+}
+.ni1::before{
+  content: '';
+  width: 200px !important;
+  height: 200px !important;
+  background-color: var(--primary);
 }
 @media(Min-width: 900px) {
   .main-nav{
@@ -142,6 +166,9 @@ body{
 }
 
 .name-and-about{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
   padding-left: calc(40vw - 300px);
   padding-top: calc(35vh - 150px);
 }
@@ -160,6 +187,7 @@ body{
 .my-name{
   font-size: 100px;
   color: var(--primary);
+  letter-spacing: 15px;
   /*position: absolute;
   top:20%;
   left: 20%;*/
@@ -167,7 +195,7 @@ body{
 .about-me{
   width: 600px;
   font-size: 20px;
-  color: gray;
+  background-color: var(--light);
 }
 
 @media(max-width: 675px){
@@ -178,14 +206,69 @@ body{
   .about-me{
     width: 370px;
   }
+  .my-name{
+    letter-spacing: 5px;
+  }
 }
 
 .welcome{
   font-size: 170px;
-  color: var(--dark);
+  font-family: 'Roboto', sans-serif;
+  color: var(--light);
   opacity: 1;
-  position: fixed;
+  position: absolute;
   right: -300px;
   bottom: 250px;
   transform: rotateZ(-90deg);
+  z-index: -1;
+  -webkit-text-stroke: 2px var(--secondary);
+}
+@media(max-width: 500px){
+  .welcome{
+    font-size: 90px;
+    right: -160px;
+    bottom: 150px;
+  }
+}
+@media(max-height: 750px){
+  .welcome{
+    font-size: 90px;
+    right: -160px;
+    bottom: 150px;
+  }
+}
+
+.plik-title{
+  margin: 200px 50px 100px;
+  font-size: 90px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--light);
+  -webkit-text-stroke: 1.5px var(--primary);
+}
+
+@media(max-width: 1465px){
+  .plik-title{
+    font-size: 70px;
+  }
+}
+@media(max-width: 1200px){
+  .plik-title{
+    font-size: 50px;
+  }
+}
+@media(max-width: 920px){
+  .plik-title{
+    font-size: 50px;
+    margin: 200px 50px 50px;
+  }
+}
+@media(max-width: 665px){
+  .plik-title{
+    margin: 300px 50px 50px;
+  }
+}
+.plik{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
